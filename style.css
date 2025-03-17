@@ -109,12 +109,9 @@ nav {
   }
 }
 
-
-
-  .navbar-extra {
-    display: block;
-  }
-
+.navbar-extra {
+  display: block;
+}
 
 @media (min-width: 769px) {
   .navbar-extra {
