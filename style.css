@@ -61,42 +61,64 @@ nav {
 
 .navbar-extra {
   display: none;
+  position: relative;
 }
 
-.navbar-extra #menu {
-  color: #fff;
+#menu,
+#close-menu {
+  font-size: 2rem;
+  color: white;
   cursor: pointer;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  html {
-    font-size: 68%;
-  }
+#close-menu {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 10000;
+}
 
+/* Jika navbar aktif, tampilkan tombol "X" */
+.navbar-nav.active ~ .navbar-extra #menu {
+  display: none;
+}
+
+.navbar-nav.active ~ .navbar-extra #close-menu {
+  display: block;
+}
+
+/* Navbar muncul dengan animasi */
+@media (max-width: 768px) {
   .navbar-nav {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: fixed;
-    right: 0;
     top: 0;
-    height: 100%;
-    width: 250px; /* Adjust width as needed */
+    right: -100%; /* Awalnya tersembunyi */
+    width: 250px;
+    height: 100vh;
     background-color: rgba(1, 1, 1, 0.9);
-    padding-top: 3.5rem; /* Adjust to push the nav items below the nav bar */
+    padding-top: 3.5rem;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+    transition: right 0.3s ease-in-out; /* Animasi smooth */
   }
 
-  .navbar-nav a {
-    margin: 1rem 0;
-    padding: 1rem;
-    width: 100%;
-    text-align: center;
+  .navbar-nav.active {
+    right: 0; /* Muncul dari kanan */
   }
+}
+
+
 
   .navbar-extra {
     display: block;
+  }
+
+
+@media (min-width: 769px) {
+  .navbar-extra {
+    display: none;
   }
 }
 
@@ -106,7 +128,7 @@ nav {
   }
 
   .main .gambar img {
-    width: 150px !important; /* Gunakan !important jika diperlukan */
+    width: 150px !important;
   }
 }
 
@@ -160,11 +182,11 @@ nav {
 .skill,
 .hobi,
 .tujuan {
-  width: 80%; /* Lebar konten */
+  width: 80%;
   max-width: 600px;
   background-color: rgb(214, 214, 214);
   padding: 23px;
-  margin-bottom: 20px; /* Spasi antar div */
+  margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: grid;
