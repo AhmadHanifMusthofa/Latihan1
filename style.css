@@ -1,0 +1,171 @@
+:root {
+  --primary: rgb(239, 239, 163);
+  --bg: #f0f0f0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar-nav a:hover {
+  color: var(--primary);
+  border-bottom: 3px solid var(--primary);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition-delay: 0.3s;
+}
+
+.navbar-extra {
+  display: none;
+}
+
+.navbar-extra #menu {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  html {
+    font-size: 68%;
+  }
+
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 250px; /* Adjust width as needed */
+    background-color: rgba(1, 1, 1, 0.9);
+    padding-top: 3.5rem; /* Adjust to push the nav items below the nav bar */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+
+  .navbar-nav a {
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-extra {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  .main .gambar img {
+    width: 150px !important; /* Gunakan !important jika diperlukan */
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  gap: 1.5rem;
+}
+
+.main .gambar img {
+  width: 230px;
+  border-radius: 40%;
+  box-shadow: rgba(1, 1, 1, 0.9);
+}
+
+.info {
+  display: block;
+}
+
+.info h1 span {
+  font-style: italic;
+}
+
+.halaman-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgb(156, 153, 153);
+}
+
+.halaman-2 h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.halaman-2 p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.skill,
+.hobi,
+.tujuan {
+  width: 80%; /* Lebar konten */
+  max-width: 600px;
+  background-color: rgb(214, 214, 214);
+  padding: 23px;
+  margin-bottom: 20px; /* Spasi antar div */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+}
